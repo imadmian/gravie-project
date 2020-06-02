@@ -3,6 +3,17 @@
 ## Instructions
 After completing the challenge below, please send us an email with the location of your repository. If your repository is private, be sure to add us as collaborators so we can view your code.
 
+
+## Starting the SPA Application 
+
+To start the app:
+
+```
+lein figwheel
+```
+
+Then point your browser to `http://localhost:3449`. 
+
 ### Time Box
 3-4 Hours
 
