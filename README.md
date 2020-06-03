@@ -1,21 +1,18 @@
 # Gravie Software Engineer Challenge
 
-## Instructions
-After completing the challenge below, please send us an email with the location of your repository. If your repository is private, be sure to add us as collaborators so we can view your code.
+## Challenge solution 
 
-
-## Starting the SPA Application 
-
-To start the app:
+To run the app:
 
 ```
 lein figwheel
 ```
-
 Then point your browser to `http://localhost:3449`. 
 
 Deployed to Heroku: [Demo](https://giant-bomb-app.herokuapp.com)
 
+## Instructions
+After completing the challenge below, please send us an email with the location of your repository. If your repository is private, be sure to add us as collaborators so we can view your code.
 ### Time Box
 3-4 Hours
 
