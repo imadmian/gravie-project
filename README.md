@@ -14,6 +14,8 @@ lein figwheel
 
 Then point your browser to `http://localhost:3449`. 
 
+Deployed to Heroku: [Demo](https://giant-bomb-app.herokuapp.com)
+
 ### Time Box
 3-4 Hours
 
