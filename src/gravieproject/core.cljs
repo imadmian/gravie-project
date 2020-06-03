@@ -1,10 +1,10 @@
 (ns gravieproject.core
-  (:require [reagent.core :as reagent :refer [atom]]
+  (:require [reagent.core :as reagent]
             [re-frame.core :as rf]
             [gravieproject.db]
             [gravieproject.events]
             [gravieproject.subs]
-            [gravieproject.helpers :as help]
+            [gravieproject.request :as http]
             [gravieproject.components.header :refer [header]]
             [gravieproject.views.home :as home]
             [gravieproject.views.search :as search]))
@@ -22,7 +22,7 @@
         records @(rf/subscribe [:records])]
     (when (empty? records)
       (rf/dispatch [:initialize-db])
-      (help/search-game "game" :load-data))
+      (http/search-game "game" :load-data))
 
     [:div.container
      [header]

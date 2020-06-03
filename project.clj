@@ -13,9 +13,7 @@
                  [cljs-ajax "0.5.8"]
                  [cljs-http "0.1.46"]
                  [re-frame "0.10.5"]
-                 [cljsjs/react-with-addons "15.6.1-0"]
-                 [binaryage/devtools "1.0.2"]
-                 ]
+                 [binaryage/devtools "1.0.2"]]
 
   :plugins [[lein-figwheel "0.5.19"]
             [lein-cljsbuild "1.1.7" :exclusions [[org.clojure/clojure]]]]
