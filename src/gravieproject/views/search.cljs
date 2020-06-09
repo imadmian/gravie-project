@@ -22,5 +22,5 @@
           [:input.btn.btn--secondary {:type "button"
                    :value "Search"
                    :on-click #(http/search-game @search-text :record-search)}]]]
-        [home/items @records :order-search]]
-       [home/orders @records :order-search]])))
+        [home/items @records]]
+       [home/orders]])))

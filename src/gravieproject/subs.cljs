@@ -10,8 +10,8 @@
    (:items db)))
 
 (reg-sub :orders
- (fn [db [_ type]]
-   (type db)))
+ (fn [db _]
+   (:orders db)))
 
 (reg-sub :records
          (fn [db _]

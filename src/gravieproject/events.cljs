@@ -8,18 +8,18 @@
 
 (reg-event-db
   :add-order
-  (fn [db [_ id type]]
-    (update-in db [type id] inc)))
+  (fn [db [_ id]]
+    (update-in db [:orders id] inc)))
 
 (reg-event-db
   :remove-order
-  (fn [db [_ id type]]
-    (update-in db [type] dissoc id)))
+  (fn [db [_ id]]
+    (update-in db [:orders] dissoc id)))
 
 (reg-event-db
   :remove-all-orders
-  (fn [db [_ type]]
-    (update-in db [type] {})))
+  (fn [db _]
+    (update-in db [:orders] {})))
 
 (reg-event-db
   :load-data
@@ -29,4 +29,6 @@
 (reg-event-db
   :record-search
   (fn [db [_ data]]
-    (assoc-in db [:record-search] data)))
+    (-> db
+        (assoc-in [:record-search] data)
+        (assoc-in [:records] (merge (db :records) data)))))

@@ -7,8 +7,9 @@
               (* quant 10)))
        (reduce +)))
 
-(defn orders [records type]
-  (let [orders (rf/subscribe [:orders type])]
+(defn orders []
+  (let [orders (rf/subscribe [:orders])
+        records @(rf/subscribe [:records])]
     [:aside
      (if (empty? @orders)
        [:div.empty
@@ -28,7 +29,7 @@
              [:div.price (str "$" (* 10 quant))]
              [:button.btn.btn--link.tooltip
               {:data-tooltip "Remove"
-               :on-click #(rf/dispatch [:remove-order id type])}
+               :on-click #(rf/dispatch [:remove-order id])}
               [:i.icon.icon--cross]]]])]
         [:div.total
          [:hr]
@@ -38,10 +39,10 @@
            [:div.price (str "$" (total orders records))]]
           [:button.btn.btn--link.tooltip
            {:data-tooltip "Remove All"
-            :on-click #(rf/dispatch [:remove-all-orders type])}
+            :on-click #(rf/dispatch [:remove-all-orders])}
            [:i.icon.icon--delete]]]]])]))
 
-(defn items [records type]
+(defn items [records]
   [:main
    [:div.gigs
     (for [{:keys [id image name date_added deck]} (vals records)]
@@ -51,7 +52,7 @@
         [:div.gig__title
          [:div.btn.btn--primary.float--right.tooltip
           {:data-tooltip "Add to rent"
-           :on-click #(rf/dispatch [:add-order id type])}
+           :on-click #(rf/dispatch [:add-order id])}
           [:i.icon.icon--plus]] name]
         [:p.gig__price date_added]
         [:p.gig__desc deck]]])]])
@@ -59,5 +60,5 @@
 (defn main []
   (let [records @(rf/subscribe [:records])]
     [:<>
-     [items records :orders]
-     [orders records :orders]]))
+     [items records]
+     [orders]]))
