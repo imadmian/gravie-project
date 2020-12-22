@@ -1,4 +1,4 @@
-# Gravie Software Engineer Challenge
+# Software Engineer Challenge
 
 ## Challenge solution 
 
