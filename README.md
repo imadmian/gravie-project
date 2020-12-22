@@ -13,7 +13,7 @@ You can find the quickstart guide [here](https://www.giantbomb.com/forums/api-de
 
 You can find a full list of API features [here](https://www.giantbomb.com/api/documentation).
 
-## Challenge solution 
+## Challenge Solution 
 
 To run the app:
 
