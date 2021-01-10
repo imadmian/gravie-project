@@ -15,6 +15,11 @@ You can find a full list of API features [here](https://www.giantbomb.com/api/do
 
 ## Challenge Solution 
 
+The challenge task was assigned to me by a prospective employer, I completed the task successfully well before the assigned time of 24 hours. The libraries I used to complete this task are: 
+- clojurescript
+- reagent
+- re-frame
+
 To run the app:
 
 ```
